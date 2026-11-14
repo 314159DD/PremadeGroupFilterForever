@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Premade Group Filter Forever Branding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: one stage with ambient light, glass cards in a 12-column grid, the icon as the only picture. */
+:root{
+  --paper:#f5f6f8; --surface:#fcfcfd; --ink:#0e1116; --ink-soft:#4a5160; --muted-ink:#5e6573;
+  --line:rgba(14,17,22,.08); --line-strong:rgba(14,17,22,.14); --well:rgba(14,17,22,.055);
+  --edge:rgba(255,255,255,.9); --edge-soft:rgba(255,255,255,.4); --shadow-c:#0e1116; --silver:#c9ced8;
+  --brand:#2b3a8c; --glow:#8fa2ff; --accent-text:var(--brand);
+  --ok:#2f7a55; --warn:#8f5512; --ok-bg:rgba(47,122,85,.1); --warn-bg:rgba(143,85,18,.1);
+  --ambient-glow:42%; --ambient-mitte:16%; --ambient-brand:24%; --ambient-silver:75%;
+  --radius:.75rem; --radius-chip:.5rem; --radius-box:1rem; --radius-panel:1.375rem; --radius-sheet:1.75rem;
+  --ease-arrive:cubic-bezier(.22,1,.36,1); --ease-spring:cubic-bezier(.3,1.42,.36,1); --ease-expo:cubic-bezier(.16,1,.3,1);
+  --font:'Geist',system-ui,sans-serif; --mono:'Geist Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#0b0d12; --surface:#1a1e27; --ink:#eef0f4; --ink-soft:#b4bac6; --muted-ink:#8e95a3;
+    --line:rgba(255,255,255,.08); --line-strong:rgba(255,255,255,.14); --well:rgba(255,255,255,.06);
+    --edge:rgba(255,255,255,.16); --edge-soft:rgba(255,255,255,.06); --shadow-c:#000; --silver:#3a4150;
+    --accent-text:var(--glow); --ok:#6fcf9e; --warn:#f0b26b; --ok-bg:rgba(111,207,158,.12); --warn-bg:rgba(240,178,107,.12);
+    --ambient-glow:23%; --ambient-mitte:9%; --ambient-brand:13%; --ambient-silver:41%;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#0b0d12; --surface:#1a1e27; --ink:#eef0f4; --ink-soft:#b4bac6; --muted-ink:#8e95a3;
+  --line:rgba(255,255,255,.08); --line-strong:rgba(255,255,255,.14); --well:rgba(255,255,255,.06);
+  --edge:rgba(255,255,255,.16); --edge-soft:rgba(255,255,255,.06); --shadow-c:#000; --silver:#3a4150;
+  --accent-text:var(--glow); --ok:#6fcf9e; --warn:#f0b26b; --ok-bg:rgba(111,207,158,.12); --warn-bg:rgba(240,178,107,.12);
+  --ambient-glow:23%; --ambient-mitte:9%; --ambient-brand:13%; --ambient-silver:41%;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--font);font-size:14px;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;min-height:100%}
+.stage{position:fixed;inset:0;z-index:0;background:
+  radial-gradient(55% 60% at 4% 0%,color-mix(in oklab,var(--glow) var(--ambient-glow),transparent),transparent 70%),
+  radial-gradient(45% 50% at 100% 8%,color-mix(in oklab,var(--silver) var(--ambient-silver),transparent),transparent 70%),
+  radial-gradient(45% 50% at 60% 55%,color-mix(in oklab,var(--glow) var(--ambient-mitte),transparent),transparent 72%),
+  radial-gradient(60% 55% at 85% 105%,color-mix(in oklab,var(--brand) var(--ambient-brand),transparent),transparent 72%),
+  var(--paper)}
+main{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:56px 20px 96px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px}
+.glass{border-radius:var(--radius-panel);padding:24px;background:color-mix(in oklab,var(--surface) 64%,transparent);
+  -webkit-backdrop-filter:blur(28px) saturate(170%);backdrop-filter:blur(28px) saturate(170%);
+  box-shadow:inset 0 1px 0 var(--edge),inset 0 0 0 1px var(--edge-soft),0 2px 4px color-mix(in oklab,var(--shadow-c) 5%,transparent),0 18px 44px -18px color-mix(in oklab,var(--shadow-c) 22%,transparent),0 36px 80px -40px color-mix(in oklab,var(--brand) 22%,transparent);
+  animation:arrive 700ms var(--ease-expo) both}
+.dense{background:color-mix(in oklab,var(--surface) 86%,transparent)}
+main>.glass:nth-child(2){animation-delay:80ms} main>.glass:nth-child(3){animation-delay:160ms}
+main>.glass:nth-child(4){animation-delay:240ms} main>.glass:nth-child(5){animation-delay:320ms}
+main>.glass:nth-child(6){animation-delay:400ms} main>.glass:nth-child(7){animation-delay:480ms}
+@keyframes arrive{from{opacity:.001;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+.c12{grid-column:span 12}.c7{grid-column:span 7}.c5{grid-column:span 5}.c6{grid-column:span 6}.c4{grid-column:span 4}.c8{grid-column:span 8}
+h1{margin:0;font-size:48px;font-weight:600;letter-spacing:-.03em;line-height:1.06;text-wrap:balance}
+h2{margin:0 0 4px;font-size:20px;font-weight:600;letter-spacing:-.012em}
+.sub{margin:0 0 18px;font-size:12px;color:var(--muted-ink)}
+p{margin:0;line-height:1.55}
+.lede{font-size:17px;line-height:1.47;color:var(--ink-soft);max-width:58ch;margin-top:14px}
+.mono{font-family:var(--mono);font-feature-settings:"tnum";font-size:12px}
+.muted{color:var(--muted-ink)}
+img{max-width:100%;display:block}
+
+/* hero */
+.hero{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;padding:28px}
+.hero img{width:200px;height:200px;border-radius:var(--radius-panel);box-shadow:0 2px 4px color-mix(in oklab,var(--shadow-c) 12%,transparent),0 24px 60px -16px color-mix(in oklab,var(--shadow-c) 40%,transparent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{display:inline-flex;align-items:center;height:26px;padding:0 11px;border-radius:999px;font-size:12px;font-weight:500;background:var(--well);color:var(--ink-soft)}
+.chip.ok{background:var(--ok-bg);color:var(--ok)} .chip.warn{background:var(--warn-bg);color:var(--warn)}
+
+/* icon sizes */
+.sizes{display:flex;align-items:flex-end;gap:28px;flex-wrap:wrap}
+.sizes figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px}
+.sizes figcaption{text-align:center;font-size:12px;color:var(--muted-ink);line-height:1.4}
+.tile{padding:18px;border-radius:var(--radius-box);background:var(--well);box-shadow:inset 0 1px 2px color-mix(in oklab,var(--shadow-c) 9%,transparent)}
+.tile.game{background:#15110d}
+.px{image-rendering:auto;border-radius:4px}
+
+/* swatches */
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px}
+.sw{border-radius:14px;overflow:hidden;background:color-mix(in oklab,var(--surface) 86%,transparent);box-shadow:inset 0 0 0 1px var(--line)}
+.sw i{display:block;height:64px}
+.sw div{padding:10px 12px}
+.sw b{display:block;font-size:13px;font-weight:500}
+
+/* listing preview */
+.listing{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;padding:20px;border-radius:var(--radius-box);background:var(--well);box-shadow:inset 0 1px 2px color-mix(in oklab,var(--shadow-c) 9%,transparent)}
+.listing img{width:96px;height:96px;border-radius:12px}
+.listing h3{margin:0;font-size:20px;font-weight:600;letter-spacing:-.012em}
+.listing p{color:var(--ink-soft);margin-top:6px;font-size:15px}
+.rows{display:grid;gap:0;margin-top:18px}
+.row{display:grid;grid-template-columns:170px 1fr;gap:16px;padding:12px 0;border-top:1px solid var(--line);align-items:baseline}
+.row:first-child{border-top:0}
+.row dt{font-size:12px;font-weight:500;color:var(--muted-ink)} .row dd{margin:0}
+dl{margin:0}
+
+/* in-game mock */
+.addonlist{border-radius:var(--radius-box);background:#15110d;padding:14px;color:#e8d9b0;font-size:13px}
+.addonlist .line{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:7px 8px;border-radius:8px}
+.addonlist .line.on{background:rgba(229,177,68,.12)}
+.addonlist .line img{width:22px;height:22px;border-radius:3px}
+.addonlist .line.other i{width:22px;height:22px;border-radius:3px;background:#3d332c;display:block}
+.addonlist .line small{color:#9c8c6a;font-size:12px}
+.addonlist .gold{color:#e5b144}
+
+/* copy columns */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+li{padding-left:22px;position:relative;line-height:1.5;color:var(--ink-soft)}
+li::before{content:"";position:absolute;left:4px;top:.6em;width:7px;height:7px;border-radius:999px;background:var(--muted-ink)}
+.does li::before{background:var(--ok)}
+.quote{padding:16px 18px;border-radius:var(--radius-box);background:var(--well);font-size:15px;line-height:1.55;color:var(--ink)}
+.open li::before{background:var(--warn)}
+a{color:var(--accent-text);text-decoration:none;font-weight:500}
+a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--accent-text);outline-offset:3px;border-radius:4px}
+
+@media (max-width:860px){
+  .c7,.c5,.c6,.c4,.c8{grid-column:span 12}
+  .hero{grid-template-columns:1fr;gap:20px} .hero img{width:140px;height:140px}
+  h1{font-size:36px} .cols{grid-template-columns:1fr} .row{grid-template-columns:1fr;gap:4px}
+  .listing{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (prefers-reduced-transparency:reduce){.glass{background:var(--surface);-webkit-backdrop-filter:none;backdrop-filter:none}}
+</style>
+</head>
+<body>
+<div class="stage" aria-hidden="true"></div>
+<main>
+
+  <section class="glass c12 hero">
+    <img src="logo.jpg" alt="Premade Group Filter Forever logo: a bronze magnifying glass with a shield, a green cross and crossed swords inside the lens">
+    <div>
+      <h1>Premade Group Filter Forever</h1>
+      <p class="lede">Filter the Looking For Group list by role: solo tanks and healers, groups with a tank, a healer or free DPS slots.</p>
+      <div class="chips">
+        <span class="chip">WoW Forever</span>
+        <span class="chip mono">Interface 16001</span>
+        <span class="chip mono">v1.0.0</span>
+        <span class="chip">MIT</span>
+        <span class="chip ok">Runs in game</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="glass c7">
+    <h2>The icon</h2>
+    <p class="sub">A magnifying glass for the search, and the three roles the filter sorts by inside the lens.</p>
+    <div class="sizes">
+      <figure><div class="tile"><img src="logo.jpg" width="128" height="128" alt="" style="border-radius:10px"></div><figcaption>CurseForge logo<br><span class="mono">400 px</span></figcaption></figure>
+      <figure><div class="tile game"><img class="px" src="icon-64.png" width="64" height="64" alt=""></div><figcaption>In-game file<br><span class="mono">128 px TGA</span></figcaption></figure>
+      <figure><div class="tile game"><img class="px" src="icon-32.png" width="32" height="32" alt=""></div><figcaption>AddOn list<br><span class="mono">32 px</span></figcaption></figure>
+      <figure><div class="tile game"><img class="px" src="icon-32.png" width="18" height="18" alt=""></div><figcaption>Smallest use<br><span class="mono">18 px</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="glass c5">
+    <h2>In the AddOn list</h2>
+    <p class="sub">How the title, icon and note line read next to other addons.</p>
+    <div class="addonlist" role="img" aria-label="Mock of the in-game addon list with Premade Group Filter Forever selected">
+      <div class="line other"><i></i><span>Plater</span><small>Nameplates</small></div>
+      <div class="line on"><img src="icon-32.png" alt=""><span class="gold">Premade Group Filter Forever</span><small>Groups</small></div>
+      <div class="line other"><i></i><span>Questie</span><small>Quests</small></div>
+      <div class="line other"><i></i><span>WeakAuras</span><small>Combat</small></div>
+    </div>
+    <p class="muted" style="margin-top:14px;font-size:12px;line-height:1.5">Note line: Filters the Looking For Group list: solo players by role, groups by tank, healer and free DPS slots.</p>
+  </section>
+
+  <section class="glass c12">
+    <h2>Colours in the icon</h2>
+    <p class="sub">Sampled from the artwork. They belong to the icon. The addon itself uses the game's own buttons and menus.</p>
+    <div class="swatches">
+      <div class="sw"><i style="background:#eb9a4a"></i><div><b>Lens gold</b><span class="mono muted">#eb9a4a</span></div></div>
+      <div class="sw"><i style="background:#ad6e37"></i><div><b>Bronze</b><span class="mono muted">#ad6e37</span></div></div>
+      <div class="sw"><i style="background:#547792"></i><div><b>Tank steel</b><span class="mono muted">#547792</span></div></div>
+      <div class="sw"><i style="background:#579e3a"></i><div><b>Healer green</b><span class="mono muted">#579e3a</span></div></div>
+      <div class="sw"><i style="background:#234e53"></i><div><b>Teal</b><span class="mono muted">#234e53</span></div></div>
+      <div class="sw"><i style="background:#3a3a36"></i><div><b>Iron frame</b><span class="mono muted">#3a3a36</span></div></div>
+    </div>
+  </section>
+
+  <section class="glass c12">
+    <h2>CurseForge listing</h2>
+    <p class="sub">What the project page carries. Full description text is in <span class="mono">branding/curseforge-description.md</span>.</p>
+    <div class="listing">
+      <img src="logo.jpg" alt="">
+      <div>
+        <h3>Premade Group Filter Forever</h3>
+        <p>Filter the Looking For Group list by role: solo tanks and healers, groups with a tank, a healer or free DPS slots.</p>
+      </div>
+    </div>
+    <dl class="rows">
+      <div class="row"><dt>Game version</dt><dd>WoW Forever <span class="mono muted">(16001)</span></dd></div>
+      <div class="row"><dt>Dependencies</dt><dd>None</dd></div>
+      <div class="row"><dt>Licence</dt><dd>MIT</dd></div>
+      <div class="row"><dt>Author</dt><dd>tekkon</dd></div>
+    </dl>
+  </section>
+
+  <section class="glass c12">
+    <h2>What the listing says</h2>
+    <p class="sub">Short and plain: what the addon is and what you get.</p>
+    <ul class="does">
+      <li><b>Solo players: tanks and healers only:</b> hides every solo player who is not marked as tank or healer.</li>
+      <li><b>Has a tank:</b> shows only groups that already have a tank.</li>
+      <li><b>Has a healer:</b> shows only groups that already have a healer.</li>
+      <li><b>Free DPS slots:</b> shows only groups with at least 1, 2 or 3 open DPS slots.</li>
+      <li><b>Hidden counter:</b> the button shows how many entries are filtered out.</li>
+    </ul>
+  </section>
+
+</main>
+</body>
+</html>

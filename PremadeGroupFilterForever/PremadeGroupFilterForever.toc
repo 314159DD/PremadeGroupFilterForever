@@ -1,0 +1,10 @@
+## Interface: 16001
+## Title: Premade Group Filter Forever
+## Notes: Filters the Looking For Group list: solo players by role, groups by tank, healer and free DPS slots.
+## Author: tekkon
+## Version: 1.0.0
+## IconTexture: Interface\AddOns\PremadeGroupFilterForever\PremadeGroupFilterForever
+## X-License: MIT
+## SavedVariables: PremadeGroupFilterForeverDB
+
+PremadeGroupFilterForever.lua
